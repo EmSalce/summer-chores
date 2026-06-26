@@ -1,28 +1,28 @@
 let name = 'Bill';
 
-function doSummerChores(name) {
-  mowYard(name)
-    .then((value) => {
-      console.log(value);
-      return weedEat(name);
-    })
-    .then((value) => {
-      console.log(value);
-      return trimHedges(name);
-    })
-    .then((value) => {
-      console.log(value);
-      return collectWood(name);
-    })
-    .then((value) => {
-      console.log(value);
-      return waterGarden(name);
-    })
-    .then((value) => {
-      console.log(value);
-      console.log(`${name} finished all their chores!`);
-    })
-    .catch((error) => console.error(error));
+async function doSummerChores(name) {
+  try {
+    let result;
+
+    result = await mowYard(name);
+    console.log(result);
+
+    result = await weedEat(name);
+    console.log(result);
+
+    result = await trimHedges(name);
+    console.log(result);
+
+    result = await collectWood(name);
+    console.log(result);
+
+    result = await waterGarden(name);
+    console.log(result);
+
+    console.log(`${name} finished all their chores!`);
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 function mowYard(name) {

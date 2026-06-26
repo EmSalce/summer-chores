@@ -1,6 +1,8 @@
 let name = 'Bill';
 
-doSummerChores(name, () =>
+doSummerChores(name);
+
+function doSummerChores(name) {
   mowYard(name, () =>
     weedEat(name, () =>
       trimHedges(name, () =>
@@ -11,11 +13,7 @@ doSummerChores(name, () =>
         ),
       ),
     ),
-  ),
-);
-
-function doSummerChores(name, callback) {
-  callback();
+  );
 }
 
 function mowYard(name, callback) {
